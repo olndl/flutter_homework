@@ -67,6 +67,13 @@ flutter:
     - family: PermanentMarker
       fonts:
         - asset: assets/font/PermanentMarker.ttf
+    - family: Roboto
+      fonts:
+        - asset: assets/font/Roboto.ttf
+
+    - family: Meows
+      fonts:
+        - asset: assets/font/Meows.ttf
 
   # To add assets to your application, add an assets section, like this:
   # assets:
