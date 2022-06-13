@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
-import 'package:flutter_homework/dart/strings.dart';
+import 'package:flutter_homework/dart/hw_week_6/strings.dart';
 
 class Cinema extends StatefulWidget {
   const Cinema({Key? key}) : super(key: key);

@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_homework/dart/hw_week_6.dart';
+import 'package:flutter_homework/dart/hw_week_6/hw_week_6.dart';
 import 'package:flutter_homework/flutter/hw_week_6/idea_details.dart';
 import 'package:flutter_homework/flutter/hw_week_7/pet_owner_registration_screen.dart';
+import 'dart/hw_week_7/my_butterfly_screen.dart';
 import 'flutter/hw_week_6/best_places.dart';
 import 'flutter/hw_week_6/my_notes_with_details.dart';
 import 'flutter/hw_week_7/pet_registration_screen.dart';
@@ -20,8 +21,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),
-        routes: { '/': (context) => const PetOwnerRegistrationScreen(),
-         '/pet': (context) => const PetRegistrationScreen(),},
+        home: MyButterfly(),
+        // routes: { '/': (context) => const PetOwnerRegistrationScreen(),
+        //  '/pet': (context) => const PetRegistrationScreen(),},
       //home: MyLandmarks()
       //home: Cinema()
     );
