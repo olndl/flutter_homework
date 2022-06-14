@@ -9,6 +9,13 @@ extension EmailValidator on String {
   }
 }
 
+extension PhoneValidator on String {
+  bool isPhoneNumber() {
+    return RegExp(r'(^(?:[+0]9)?[0-9]{10,12}$)')
+        .hasMatch(this);
+  }
+}
+
 class SignInPetOwner extends StatefulWidget {
   const SignInPetOwner({Key? key}) : super(key: key);
 
@@ -140,7 +147,7 @@ class SignInPetOwnerState extends State<SignInPetOwner> {
         keyboardType: TextInputType.phone,
         validator: (value) {
           if (value!.isEmpty) return "please, enter your phone";
-          if (!RegExp(r'(^(?:[+0]9)?[0-9]{10,12}$)').hasMatch(value))
+          if (!value.isPhoneNumber())
             return "this is not phone number";
         },
         decoration: InputDecoration(
