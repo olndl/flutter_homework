@@ -182,7 +182,7 @@ class SignInPetOwnerState extends State<SignInPetOwner> {
         keyboardType: TextInputType.emailAddress,
         validator: (value) {
           if (value!.isEmpty) return "please, enter your email";
-          if (!value.contains('@')) return "this is not email";
+          if (!value.isEmail()) return "this is not email";
         },
         decoration: InputDecoration(
           labelText: "email",
