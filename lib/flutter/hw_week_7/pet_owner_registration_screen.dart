@@ -11,7 +11,7 @@ class PetOwnerRegistrationScreen extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       appBar: _appBar(),
-      body: Body(),
+      body: const Body(),
     );
   }
 
@@ -20,9 +20,9 @@ class PetOwnerRegistrationScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         centerTitle: true,
-        title: Text(
+        title: const Text(
           Strings.appName,
-          style: const TextStyle(
+          style: TextStyle(
               color: Colors.black,
               fontSize: 25,
               fontFamily: 'Meows',

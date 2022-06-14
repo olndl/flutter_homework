@@ -1,5 +1,7 @@
 abstract class Strings {
   static const String titleApp = 'Бабочки';
+  static const String notExist = 'Нет такой бабочки';
+  static const String search = 'Поиск';
   static final krapivnitsa = KrapivnitsaStrings();
   static final pavliniGlaz = PavliniGlazStrings();
   static final kapustnitsa = KapustnitsaStrings();

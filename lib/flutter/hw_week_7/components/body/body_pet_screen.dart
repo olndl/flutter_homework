@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_homework/flutter/hw_week_7/components/body/body_elements/sign_in_pet.dart';
-import 'package:flutter_homework/flutter/hw_week_7/components/body/body_elements/sign_in_pet_owner.dart';
 import 'package:flutter_homework/flutter/hw_week_7/components/strings.dart';
 
 class Body extends StatelessWidget {

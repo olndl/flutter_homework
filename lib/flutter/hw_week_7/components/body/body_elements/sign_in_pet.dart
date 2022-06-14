@@ -33,7 +33,7 @@ class SignInPetState extends State<SignInPet> {
               thickness: 0.7,
               color: Color(0xff797777),
             ),
-            const Text("gender",
+            const Text(Strings.gen,
                 textAlign: TextAlign.left,
                 style: TextStyle(fontWeight: FontWeight.w900, fontSize: 14)),
             _radioButton(),
@@ -46,17 +46,17 @@ class SignInPetState extends State<SignInPet> {
                 style: TextStyle(fontWeight: FontWeight.w900, fontSize: 14)),
             CheckboxListTile(
                 value: _agreementDryFood,
-                title: Text(Strings.food1, style: const TextStyle(fontSize: 12)),
+                title: const Text(Strings.food1, style: TextStyle(fontSize: 12)),
                 onChanged: (bool? value) =>
                     setState(() => _agreementDryFood = value!)),
             CheckboxListTile(
                 value: _agreementWetFood,
-                title: Text(Strings.food2, style: const TextStyle(fontSize: 12)),
+                title: const Text(Strings.food2, style: TextStyle(fontSize: 12)),
                 onChanged: (bool? value) =>
                     setState(() => _agreementWetFood = value!)),
             CheckboxListTile(
                 value: _agreementNaturalFood,
-                title: Text(Strings.food3, style: const TextStyle(fontSize: 12)),
+                title: const Text(Strings.food3, style: TextStyle(fontSize: 12)),
                 onChanged: (bool? value) =>
                     setState(() => _agreementNaturalFood = value!)),
             const SizedBox(
@@ -83,11 +83,12 @@ class SignInPetState extends State<SignInPet> {
           valueName = value!;
         },
         validator: (value) {
-          if (value!.isEmpty) return "enter your pet name";
+          if (value!.isEmpty) return Strings.enterPetName;
+          return null;
         },
         decoration: InputDecoration(
-          labelText: "pet name",
-          hintText: "enter your pet name",
+          labelText: Strings.petName,
+          hintText: Strings.enterPetName,
           hintStyle: const TextStyle(fontSize: 12),
           floatingLabelBehavior: FloatingLabelBehavior.always,
           suffixIcon: const Padding(
@@ -123,11 +124,12 @@ class SignInPetState extends State<SignInPet> {
       child: TextFormField(
         keyboardType: TextInputType.name,
         validator: (value) {
-          if (value!.isEmpty) return "please, enter the breed";
+          if (value!.isEmpty) return 'please, '+ Strings.enterBreed;
+          return null;
         },
         decoration: InputDecoration(
-          labelText: "breed",
-          hintText: "enter the breed",
+          labelText: Strings.breed,
+          hintText: Strings.enterBreed,
           hintStyle: const TextStyle(fontSize: 12),
           floatingLabelBehavior: FloatingLabelBehavior.always,
           suffixIcon: const Padding(
@@ -163,7 +165,7 @@ class SignInPetState extends State<SignInPet> {
         Flexible(
           fit: FlexFit.loose,
           child: RadioListTile(
-            title: const Text('Male', style: TextStyle(fontSize: 12)),
+            title: const Text(Strings.male, style: TextStyle(fontSize: 12)),
             value: Gender.male,
             groupValue: _gender,
             onChanged: (Gender? value) {
@@ -176,7 +178,7 @@ class SignInPetState extends State<SignInPet> {
         Flexible(
           fit: FlexFit.loose,
           child: RadioListTile(
-            title: const Text('Female', style: TextStyle(fontSize: 12)),
+            title: const Text(Strings.female, style: TextStyle(fontSize: 12)),
             value: Gender.female,
             groupValue: _gender,
             onChanged: (Gender? value) {
@@ -201,13 +203,13 @@ class SignInPetState extends State<SignInPet> {
             String text;
 
             if (_gender == null) {
-              text = "gender not selected";
+              text = Strings.genNotSelected;
             } else if (_agreementDryFood == false &&
                 _agreementWetFood == false &&
                 _agreementNaturalFood == false) {
-              text = "food not selected";
+              text = Strings.foodNotSelected;
             } else {
-              text = "successfully";
+              text = Strings.great;
               color = Colors.green;
             }
 
@@ -234,7 +236,7 @@ class SignInPetState extends State<SignInPet> {
             children: const <Widget>[
               Center(
                 child: Text(
-                  "SAVE",
+                  Strings.save,
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 16,

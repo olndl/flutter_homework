@@ -10,12 +10,11 @@ class PetRegistrationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var message = ModalRoute.of(context)?.settings.arguments as String;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       appBar: _appBar(),
-      body: Body(),
+      body: const Body(),
     );
   }
 
@@ -24,9 +23,9 @@ class PetRegistrationScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       elevation: 0,
       centerTitle: true,
-      title: Text(
+      title: const Text(
         Strings.appName,
-        style: const TextStyle(
+        style: TextStyle(
             color: Colors.black,
             fontSize: 25,
             fontFamily: 'Meows',

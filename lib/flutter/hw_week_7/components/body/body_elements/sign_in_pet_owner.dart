@@ -49,9 +49,9 @@ class SignInPetOwnerState extends State<SignInPetOwner> {
   }
 
   Widget _title() {
-    return Text(Strings.subTitleScreen,
+    return const Text(Strings.subTitleScreen,
         textAlign: TextAlign.left,
-        style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 18));
+        style: TextStyle(fontWeight: FontWeight.w900, fontSize: 18));
   }
 
   Widget _firstNameForm() {
@@ -67,9 +67,10 @@ class SignInPetOwnerState extends State<SignInPetOwner> {
         },
         validator: (value) {
           if (value!.isEmpty) return Strings.yourFirstName;
+          return null;
         },
         decoration: InputDecoration(
-          labelText: "first name",
+          labelText: Strings.firstName,
           hintText: Strings.yourFirstName,
           hintStyle: const TextStyle(fontSize: 12),
           floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -107,9 +108,10 @@ class SignInPetOwnerState extends State<SignInPetOwner> {
         keyboardType: TextInputType.name,
         validator: (value) {
           if (value!.isEmpty) return Strings.yourLastName;
+          return null;
         },
         decoration: InputDecoration(
-          labelText: "last name",
+          labelText: Strings.lastName,
           hintText: Strings.yourLastName,
           hintStyle: const TextStyle(fontSize: 12),
           floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -146,13 +148,15 @@ class SignInPetOwnerState extends State<SignInPetOwner> {
       child: TextFormField(
         keyboardType: TextInputType.phone,
         validator: (value) {
-          if (value!.isEmpty) return "please, enter your phone";
-          if (!value.isPhoneNumber())
-            return "this is not phone number";
+          if (value!.isEmpty) return Strings.yourPhoneNumber;
+          if (!value.isPhoneNumber()) {
+            return 'this is not ' + Strings.phoneNumber;
+          }
+          return null;
         },
         decoration: InputDecoration(
-          labelText: "phone number",
-          hintText: "enter your phone",
+          labelText: Strings.phoneNumber,
+          hintText: 'enter your '+Strings.phoneNumber,
           hintStyle: const TextStyle(fontSize: 12),
           floatingLabelBehavior: FloatingLabelBehavior.always,
           suffixIcon: const Padding(
@@ -188,12 +192,13 @@ class SignInPetOwnerState extends State<SignInPetOwner> {
       child: TextFormField(
         keyboardType: TextInputType.emailAddress,
         validator: (value) {
-          if (value!.isEmpty) return "please, enter your email";
-          if (!value.isEmail()) return "this is not email";
+          if (value!.isEmpty) return 'please, '+Strings.enterEmail;
+          if (!value.isEmail()) return Strings.notEmail;
+          return null;
         },
         decoration: InputDecoration(
-          labelText: "email",
-          hintText: "enter your email",
+          labelText: Strings.email,
+          hintText: Strings.enterEmail,
           hintStyle: const TextStyle(fontSize: 12),
           floatingLabelBehavior: FloatingLabelBehavior.always,
           suffixIcon: const Padding(

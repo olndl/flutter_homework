@@ -40,7 +40,7 @@ class _MyButterflyState extends State<MyButterfly> {
               SizedBox(
             height: screenHeight / 2.5,
 
-            child: _searchResult.isEmpty ? _cards("Нет такой бабочки", Colors.white.withOpacity(.5), screenWidth) :
+            child: _searchResult.isEmpty ? _cards(Strings.notExist, Colors.white.withOpacity(.5), screenWidth) :
             (_searchResult.length == 1 ? Column(children: [_cards(_searchResult[0].getName(),Colors.deepPurple.withOpacity(.5), screenWidth),
             _butterflyInfo(_searchResult[0].getName(), _searchResult[0].getImage(), _searchResult[0].getText(), screenHeight)],) :
             (controller.text.isNotEmpty
@@ -106,7 +106,7 @@ class _MyButterflyState extends State<MyButterfly> {
           controller: controller,
           keyboardType: TextInputType.text,
           decoration: const InputDecoration(
-              hintText: 'Поиск', border: InputBorder.none),
+              hintText: Strings.search, border: InputBorder.none),
           onChanged: onSearchTextChanged,
         ),
         trailing: IconButton(icon: Icon(Icons.cancel), onPressed: () {

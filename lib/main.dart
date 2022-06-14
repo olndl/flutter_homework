@@ -21,9 +21,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),
-        home: MyButterfly(),
-        // routes: { '/': (context) => const PetOwnerRegistrationScreen(),
-        //  '/pet': (context) => const PetRegistrationScreen(),},
+        //home: MyButterfly(),
+         routes: { '/': (context) => const PetOwnerRegistrationScreen(),
+          '/pet': (context) => const PetRegistrationScreen(),},
       //home: MyLandmarks()
       //home: Cinema()
     );

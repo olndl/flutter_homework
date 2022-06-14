@@ -13,17 +13,17 @@ class Body extends StatelessWidget {
         child: SafeArea(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
-          children: [
+          children: const [
             Text(
               Strings.titleScreen,
-              style: const TextStyle(
+              style: TextStyle(
                 color: Colors.black,
                 fontFamily: 'Roboto',
                 fontSize: 15,
               ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 25,),
+            SizedBox(height: 25,),
             SignInPetOwner(),
           ],
         )));
