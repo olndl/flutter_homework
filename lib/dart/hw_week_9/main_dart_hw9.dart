@@ -1,5 +1,24 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:intl/date_symbol_data_local.dart';
+
+void main() => runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Intl Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const MyHomePage(),
+    );
+  }
+}
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -12,12 +31,21 @@ class _MyHomePageState extends State<MyHomePage> {
   late DateFormat _dateFormat;
   late DateFormat _timeFormat;
 
+
   @override
   void initState() {
+    Timer.periodic(Duration(seconds:1), (Timer t)=>_getCurrentTime());
     super.initState();
-    //initializeDateFormatting();
-    _setLocale('cs');
+    initializeDateFormatting();
+    _setLocale('ru');
   }
+
+  void _getCurrentTime()  {
+    setState(() {
+    });
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +57,9 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
-            // Text(_dateFormat.format(dateTime)),
-            // Text(_timeFormat.format(dateTime)),
+          children: <Widget>[
+            Text(_dateFormat.format(dateTime)),
+            Text(_timeFormat.format(dateTime)),
           ],
         ),
       ),
