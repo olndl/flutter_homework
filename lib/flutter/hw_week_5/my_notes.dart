@@ -10,7 +10,7 @@ class MyNotes extends StatefulWidget {
 }
 
 class _MyNotesState extends State<MyNotes> {
-  Set<String> _ideas = {'собирать мёд', 'продавать шишки'};
+  final Set<String> _ideas = {'собирать мёд', 'продавать шишки'};
 
   @override
   Widget build(BuildContext context) {

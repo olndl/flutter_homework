@@ -13,7 +13,7 @@ class _MyButterflyState extends State<MyButterfly> {
 
   TextEditingController controller = TextEditingController();
 
-  List<Butterfly> _searchResult = [];
+  final List<Butterfly> _searchResult = [];
 
   final List<Butterfly> _data =  [
     Butterfly(Strings.krapivnitsa.name, Strings.krapivnitsa.image, Strings.krapivnitsa.text),
@@ -69,10 +69,11 @@ class _MyButterflyState extends State<MyButterfly> {
       return;
     }
 
-    _data.forEach((userDetail) {
-      if (userDetail.getName().contains(text))
+    for (var userDetail in _data) {
+      if (userDetail.getName().contains(text)) {
         _searchResult.add(userDetail);
-    });
+      }
+    }
 
     setState(() {});
   }
@@ -99,9 +100,9 @@ class _MyButterflyState extends State<MyButterfly> {
 
   Widget _searchLine() {
     return Container(
-      margin: EdgeInsets.fromLTRB(15, 5, 15, 5),
+      margin: const EdgeInsets.fromLTRB(15, 5, 15, 5),
       child: ListTile(
-        leading:  Icon(Icons.search),
+        leading:  const Icon(Icons.search),
         title: TextField(
           controller: controller,
           keyboardType: TextInputType.text,
@@ -109,7 +110,7 @@ class _MyButterflyState extends State<MyButterfly> {
               hintText: Strings.search, border: InputBorder.none),
           onChanged: onSearchTextChanged,
         ),
-        trailing: IconButton(icon: Icon(Icons.cancel), onPressed: () {
+        trailing: IconButton(icon: const Icon(Icons.cancel), onPressed: () {
           controller.clear();
           onSearchTextChanged('');
         },),

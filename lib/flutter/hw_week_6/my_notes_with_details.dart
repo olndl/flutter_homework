@@ -10,7 +10,7 @@ class Ideas extends StatefulWidget {
 }
 
 class _IdeasState extends State<Ideas> {
-  Set<String> _ideas = {};
+  final Set<String> _ideas = {};
 
   @override
   Widget build(BuildContext context) {

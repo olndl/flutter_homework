@@ -45,12 +45,12 @@ class _MyLandmarksState extends State<MyLandmarks> {
           centerTitle: true,
           backgroundColor: Colors.white,
         ),
-        backgroundColor: Color(0Xffc4a8d3),
+        backgroundColor: const Color(0Xffc4a8d3),
         body: ListView.builder(
           itemCount: _landmarks.length,
           itemBuilder: (context, index) {
             return Container(
-              padding: EdgeInsets.all(15),
+              padding: const EdgeInsets.all(15),
               child: _landmarkCard(
                   _landmarks[index]['landmarkText'],
                   _landmarks[index]['landmarkImage'],

@@ -1,12 +1,43 @@
-import 'package:flutter/cupertino.dart';
+import 'dart:async';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
-import 'package:flutter_homework/dart/hw_week_6/hw_week_6.dart';
-import 'package:flutter_homework/flutter/hw_week_6/idea_details.dart';
-import 'package:flutter_homework/flutter/hw_week_7/pet_owner_registration_screen.dart';
-import 'dart/hw_week_7/my_butterfly_screen.dart';
-import 'flutter/hw_week_6/best_places.dart';
-import 'flutter/hw_week_6/my_notes_with_details.dart';
-import 'flutter/hw_week_7/pet_registration_screen.dart';
+import 'flutter/hw_week_8/Gif_example_from_lesson.dart';
+
+Future<Album> fetchAlbum() async {
+  final response = await http
+      .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
+
+  if (response.statusCode == 200) {
+    // If the server did return a 200 OK response,
+    // then parse the JSON.
+    return Album.fromJson(jsonDecode(response.body));
+  } else {
+    // If the server did not return a 200 OK response,
+    // then throw an exception.
+    throw Exception('Failed to load album');
+  }
+}
+
+class Album {
+  final int userId;
+  final int id;
+  final String title;
+
+  Album({
+    required this.userId,
+    required this.id,
+    required this.title,
+  });
+
+  factory Album.fromJson(Map<String, dynamic> json) {
+    return Album(
+      userId: json['userId'],
+      id: json['id'],
+      title: json['title'],
+    );
+  }
+}
 
 void main() {
   runApp(const MyApp());
@@ -22,10 +53,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blueGrey,
       ),
         //home: MyButterfly(),
-         routes: { '/': (context) => const PetOwnerRegistrationScreen(),
-          '/pet': (context) => const PetRegistrationScreen(),},
+        //  routes: { '/': (context) => const PetOwnerRegistrationScreen(),
+        //   '/pet': (context) => const PetRegistrationScreen(),},
       //home: MyLandmarks()
-      //home: Cinema()
+      home: const MyApps()
     );
   }
 }
